@@ -1,0 +1,447 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		45660C3B14F8F570003858E6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45660C3A14F8F570003858E6 /* UIKit.framework */; };
+		45660C3D14F8F570003858E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45660C3C14F8F570003858E6 /* Foundation.framework */; };
+		45660C3F14F8F570003858E6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45660C3E14F8F570003858E6 /* CoreGraphics.framework */; };
+		45660C4114F8F570003858E6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45660C4014F8F570003858E6 /* CoreData.framework */; };
+		45660C4714F8F570003858E6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 45660C4514F8F570003858E6 /* InfoPlist.strings */; };
+		45660C4914F8F570003858E6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 45660C4814F8F570003858E6 /* main.m */; };
+		45660C4D14F8F570003858E6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 45660C4C14F8F570003858E6 /* AppDelegate.m */; };
+		45660C5014F8F570003858E6 /* SynchroKitTester.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 45660C4E14F8F570003858E6 /* SynchroKitTester.xcdatamodeld */; };
+		45660C5814F8F571003858E6 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45660C5714F8F571003858E6 /* SenTestingKit.framework */; };
+		45660C5914F8F571003858E6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45660C3A14F8F570003858E6 /* UIKit.framework */; };
+		45660C5A14F8F571003858E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45660C3C14F8F570003858E6 /* Foundation.framework */; };
+		45660C5B14F8F571003858E6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45660C4014F8F570003858E6 /* CoreData.framework */; };
+		45660C6314F8F571003858E6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 45660C6114F8F571003858E6 /* InfoPlist.strings */; };
+		45660C6614F8F571003858E6 /* SynchroKitTesterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45660C6514F8F571003858E6 /* SynchroKitTesterTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		45660C5C14F8F571003858E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45660C2D14F8F570003858E6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 45660C3514F8F570003858E6;
+			remoteInfo = SynchroKitTester;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		45660C3614F8F570003858E6 /* SynchroKitTester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SynchroKitTester.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		45660C3A14F8F570003858E6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		45660C3C14F8F570003858E6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		45660C3E14F8F570003858E6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		45660C4014F8F570003858E6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		45660C4414F8F570003858E6 /* SynchroKitTester-Info.plist */ = {isa = PBXFileReference; path = "SynchroKitTester-Info.plist"; sourceTree = "<group>"; };
+		45660C4614F8F570003858E6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		45660C4814F8F570003858E6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		45660C4A14F8F570003858E6 /* SynchroKitTester-Prefix.pch */ = {isa = PBXFileReference; path = "SynchroKitTester-Prefix.pch"; sourceTree = "<group>"; };
+		45660C4B14F8F570003858E6 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		45660C4C14F8F570003858E6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		45660C4F14F8F570003858E6 /* SynchroKitTester.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SynchroKitTester.xcdatamodel; sourceTree = "<group>"; };
+		45660C5614F8F571003858E6 /* SynchroKitTesterTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SynchroKitTesterTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		45660C5714F8F571003858E6 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		45660C6014F8F571003858E6 /* SynchroKitTesterTests-Info.plist */ = {isa = PBXFileReference; path = "SynchroKitTesterTests-Info.plist"; sourceTree = "<group>"; };
+		45660C6214F8F571003858E6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		45660C6414F8F571003858E6 /* SynchroKitTesterTests.h */ = {isa = PBXFileReference; path = SynchroKitTesterTests.h; sourceTree = "<group>"; };
+		45660C6514F8F571003858E6 /* SynchroKitTesterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SynchroKitTesterTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		45660C3314F8F570003858E6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45660C3B14F8F570003858E6 /* UIKit.framework in Frameworks */,
+				45660C3D14F8F570003858E6 /* Foundation.framework in Frameworks */,
+				45660C3F14F8F570003858E6 /* CoreGraphics.framework in Frameworks */,
+				45660C4114F8F570003858E6 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45660C5214F8F571003858E6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45660C5814F8F571003858E6 /* SenTestingKit.framework in Frameworks */,
+				45660C5914F8F571003858E6 /* UIKit.framework in Frameworks */,
+				45660C5A14F8F571003858E6 /* Foundation.framework in Frameworks */,
+				45660C5B14F8F571003858E6 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		45660C2B14F8F570003858E6 = {
+			isa = PBXGroup;
+			children = (
+				45660C4214F8F570003858E6 /* SynchroKitTester */,
+				45660C5E14F8F571003858E6 /* SynchroKitTesterTests */,
+				45660C3914F8F570003858E6 /* Frameworks */,
+				45660C3714F8F570003858E6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		45660C3714F8F570003858E6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				45660C3614F8F570003858E6 /* SynchroKitTester.app */,
+				45660C5614F8F571003858E6 /* SynchroKitTesterTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		45660C3914F8F570003858E6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				45660C3A14F8F570003858E6 /* UIKit.framework */,
+				45660C3C14F8F570003858E6 /* Foundation.framework */,
+				45660C3E14F8F570003858E6 /* CoreGraphics.framework */,
+				45660C4014F8F570003858E6 /* CoreData.framework */,
+				45660C5714F8F571003858E6 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		45660C4214F8F570003858E6 /* SynchroKitTester */ = {
+			isa = PBXGroup;
+			children = (
+				45660C4B14F8F570003858E6 /* AppDelegate.h */,
+				45660C4C14F8F570003858E6 /* AppDelegate.m */,
+				45660C4E14F8F570003858E6 /* SynchroKitTester.xcdatamodeld */,
+				45660C4314F8F570003858E6 /* Supporting Files */,
+			);
+			path = SynchroKitTester;
+			sourceTree = "<group>";
+		};
+		45660C4314F8F570003858E6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				45660C4414F8F570003858E6 /* SynchroKitTester-Info.plist */,
+				45660C4514F8F570003858E6 /* InfoPlist.strings */,
+				45660C4814F8F570003858E6 /* main.m */,
+				45660C4A14F8F570003858E6 /* SynchroKitTester-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		45660C5E14F8F571003858E6 /* SynchroKitTesterTests */ = {
+			isa = PBXGroup;
+			children = (
+				45660C6414F8F571003858E6 /* SynchroKitTesterTests.h */,
+				45660C6514F8F571003858E6 /* SynchroKitTesterTests.m */,
+				45660C5F14F8F571003858E6 /* Supporting Files */,
+			);
+			path = SynchroKitTesterTests;
+			sourceTree = "<group>";
+		};
+		45660C5F14F8F571003858E6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				45660C6014F8F571003858E6 /* SynchroKitTesterTests-Info.plist */,
+				45660C6114F8F571003858E6 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		45660C3514F8F570003858E6 /* SynchroKitTester */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45660C6914F8F571003858E6 /* Build configuration list for PBXNativeTarget "SynchroKitTester" */;
+			buildPhases = (
+				45660C3214F8F570003858E6 /* Sources */,
+				45660C3314F8F570003858E6 /* Frameworks */,
+				45660C3414F8F570003858E6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SynchroKitTester;
+			productName = SynchroKitTester;
+			productReference = 45660C3614F8F570003858E6 /* SynchroKitTester.app */;
+			productType = "com.apple.product-type.application";
+		};
+		45660C5514F8F571003858E6 /* SynchroKitTesterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45660C6C14F8F571003858E6 /* Build configuration list for PBXNativeTarget "SynchroKitTesterTests" */;
+			buildPhases = (
+				45660C5114F8F571003858E6 /* Sources */,
+				45660C5214F8F571003858E6 /* Frameworks */,
+				45660C5314F8F571003858E6 /* Resources */,
+				45660C5414F8F571003858E6 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				45660C5D14F8F571003858E6 /* PBXTargetDependency */,
+			);
+			name = SynchroKitTesterTests;
+			productName = SynchroKitTesterTests;
+			productReference = 45660C5614F8F571003858E6 /* SynchroKitTesterTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		45660C2D14F8F570003858E6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 45660C3014F8F570003858E6 /* Build configuration list for PBXProject "SynchroKitTester" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 45660C2B14F8F570003858E6;
+			productRefGroup = 45660C3714F8F570003858E6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				45660C3514F8F570003858E6 /* SynchroKitTester */,
+				45660C5514F8F571003858E6 /* SynchroKitTesterTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		45660C3414F8F570003858E6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45660C4714F8F570003858E6 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45660C5314F8F571003858E6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45660C6314F8F571003858E6 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		45660C5414F8F571003858E6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		45660C3214F8F570003858E6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45660C4914F8F570003858E6 /* main.m in Sources */,
+				45660C4D14F8F570003858E6 /* AppDelegate.m in Sources */,
+				45660C5014F8F570003858E6 /* SynchroKitTester.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45660C5114F8F571003858E6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45660C6614F8F571003858E6 /* SynchroKitTesterTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		45660C5D14F8F571003858E6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 45660C3514F8F570003858E6 /* SynchroKitTester */;
+			targetProxy = 45660C5C14F8F571003858E6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		45660C4514F8F570003858E6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45660C4614F8F570003858E6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		45660C6114F8F571003858E6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45660C6214F8F571003858E6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		45660C6714F8F571003858E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		45660C6814F8F571003858E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		45660C6A14F8F571003858E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SynchroKitTester/SynchroKitTester-Prefix.pch";
+				INFOPLIST_FILE = "SynchroKitTester/SynchroKitTester-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		45660C6B14F8F571003858E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SynchroKitTester/SynchroKitTester-Prefix.pch";
+				INFOPLIST_FILE = "SynchroKitTester/SynchroKitTester-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		45660C6D14F8F571003858E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SynchroKitTester.app/SynchroKitTester";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SynchroKitTester/SynchroKitTester-Prefix.pch";
+				INFOPLIST_FILE = "SynchroKitTesterTests/SynchroKitTesterTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		45660C6E14F8F571003858E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SynchroKitTester.app/SynchroKitTester";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SynchroKitTester/SynchroKitTester-Prefix.pch";
+				INFOPLIST_FILE = "SynchroKitTesterTests/SynchroKitTesterTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		45660C3014F8F570003858E6 /* Build configuration list for PBXProject "SynchroKitTester" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45660C6714F8F571003858E6 /* Debug */,
+				45660C6814F8F571003858E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		45660C6914F8F571003858E6 /* Build configuration list for PBXNativeTarget "SynchroKitTester" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45660C6A14F8F571003858E6 /* Debug */,
+				45660C6B14F8F571003858E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		45660C6C14F8F571003858E6 /* Build configuration list for PBXNativeTarget "SynchroKitTesterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45660C6D14F8F571003858E6 /* Debug */,
+				45660C6E14F8F571003858E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		45660C4E14F8F570003858E6 /* SynchroKitTester.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				45660C4F14F8F570003858E6 /* SynchroKitTester.xcdatamodel */,
+			);
+			currentVersion = 45660C4F14F8F570003858E6 /* SynchroKitTester.xcdatamodel */;
+			path = SynchroKitTester.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 45660C2D14F8F570003858E6 /* Project object */;
+}
