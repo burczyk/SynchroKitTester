@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		453A598714F8FE410009FA8C /* libSynchroKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45660CC414F8FDDF003858E6 /* libSynchroKit.a */; };
 		45660C3B14F8F570003858E6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45660C3A14F8F570003858E6 /* UIKit.framework */; };
 		45660C3D14F8F570003858E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45660C3C14F8F570003858E6 /* Foundation.framework */; };
 		45660C3F14F8F570003858E6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45660C3E14F8F570003858E6 /* CoreGraphics.framework */; };
@@ -21,15 +22,79 @@
 		45660C5B14F8F571003858E6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45660C4014F8F570003858E6 /* CoreData.framework */; };
 		45660C6314F8F571003858E6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 45660C6114F8F571003858E6 /* InfoPlist.strings */; };
 		45660C6614F8F571003858E6 /* SynchroKitTesterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45660C6514F8F571003858E6 /* SynchroKitTesterTests.m */; };
+		45660C7114F8F663003858E6 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = 45660C7014F8F663003858E6 /* City.m */; };
+		45660CB114F8F8AF003858E6 /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45660CA814F8F7C8003858E6 /* libRestKit.a */; };
+		45660CB814F8F8DF003858E6 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45660CB214F8F8DE003858E6 /* CFNetwork.framework */; };
+		45660CB914F8F8DF003858E6 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 45660CB314F8F8DF003858E6 /* libxml2.dylib */; };
+		45660CBA14F8F8DF003858E6 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45660CB414F8F8DF003858E6 /* MobileCoreServices.framework */; };
+		45660CBB14F8F8DF003858E6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45660CB514F8F8DF003858E6 /* QuartzCore.framework */; };
+		45660CBC14F8F8DF003858E6 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45660CB614F8F8DF003858E6 /* Security.framework */; };
+		45660CBD14F8F8DF003858E6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45660CB714F8F8DF003858E6 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		453A598814F8FE4E0009FA8C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45660CBE14F8FDDF003858E6 /* SynchroKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 45151ECA14F1129300F021AC;
+			remoteInfo = SynchroKit;
+		};
 		45660C5C14F8F571003858E6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 45660C2D14F8F570003858E6 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 45660C3514F8F570003858E6;
 			remoteInfo = SynchroKitTester;
+		};
+		45660CA714F8F7C8003858E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45660C9D14F8F7C8003858E6 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160D1614564E810060A5C5;
+			remoteInfo = RestKit;
+		};
+		45660CA914F8F7C8003858E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45660C9D14F8F7C8003858E6 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160D2614564E820060A5C5;
+			remoteInfo = RestKitTests;
+		};
+		45660CAB14F8F7C8003858E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45660C9D14F8F7C8003858E6 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160E62145651060060A5C5;
+			remoteInfo = RestKitFramework;
+		};
+		45660CAD14F8F7C8003858E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45660C9D14F8F7C8003858E6 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160E78145651060060A5C5;
+			remoteInfo = RestKitFrameworkTests;
+		};
+		45660CAF14F8F87A003858E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45660C9D14F8F7C8003858E6 /* RestKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 25160D1514564E810060A5C5;
+			remoteInfo = RestKit;
+		};
+		45660CC314F8FDDF003858E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45660CBE14F8FDDF003858E6 /* SynchroKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 45151ECB14F1129300F021AC;
+			remoteInfo = SynchroKit;
+		};
+		45660CC514F8FDDF003858E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45660CBE14F8FDDF003858E6 /* SynchroKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 45151EDB14F1129300F021AC;
+			remoteInfo = SynchroKitTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -39,19 +104,29 @@
 		45660C3C14F8F570003858E6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		45660C3E14F8F570003858E6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		45660C4014F8F570003858E6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		45660C4414F8F570003858E6 /* SynchroKitTester-Info.plist */ = {isa = PBXFileReference; path = "SynchroKitTester-Info.plist"; sourceTree = "<group>"; };
+		45660C4414F8F570003858E6 /* SynchroKitTester-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SynchroKitTester-Info.plist"; sourceTree = "<group>"; };
 		45660C4614F8F570003858E6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		45660C4814F8F570003858E6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		45660C4A14F8F570003858E6 /* SynchroKitTester-Prefix.pch */ = {isa = PBXFileReference; path = "SynchroKitTester-Prefix.pch"; sourceTree = "<group>"; };
-		45660C4B14F8F570003858E6 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		45660C4A14F8F570003858E6 /* SynchroKitTester-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SynchroKitTester-Prefix.pch"; sourceTree = "<group>"; };
+		45660C4B14F8F570003858E6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		45660C4C14F8F570003858E6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		45660C4F14F8F570003858E6 /* SynchroKitTester.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SynchroKitTester.xcdatamodel; sourceTree = "<group>"; };
 		45660C5614F8F571003858E6 /* SynchroKitTesterTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SynchroKitTesterTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		45660C5714F8F571003858E6 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		45660C6014F8F571003858E6 /* SynchroKitTesterTests-Info.plist */ = {isa = PBXFileReference; path = "SynchroKitTesterTests-Info.plist"; sourceTree = "<group>"; };
+		45660C6014F8F571003858E6 /* SynchroKitTesterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SynchroKitTesterTests-Info.plist"; sourceTree = "<group>"; };
 		45660C6214F8F571003858E6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		45660C6414F8F571003858E6 /* SynchroKitTesterTests.h */ = {isa = PBXFileReference; path = SynchroKitTesterTests.h; sourceTree = "<group>"; };
+		45660C6414F8F571003858E6 /* SynchroKitTesterTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SynchroKitTesterTests.h; sourceTree = "<group>"; };
 		45660C6514F8F571003858E6 /* SynchroKitTesterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SynchroKitTesterTests.m; sourceTree = "<group>"; };
+		45660C6F14F8F663003858E6 /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = City.h; path = Model/City.h; sourceTree = "<group>"; };
+		45660C7014F8F663003858E6 /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = City.m; path = Model/City.m; sourceTree = "<group>"; };
+		45660C9D14F8F7C8003858E6 /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
+		45660CB214F8F8DE003858E6 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		45660CB314F8F8DF003858E6 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		45660CB414F8F8DF003858E6 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		45660CB514F8F8DF003858E6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		45660CB614F8F8DF003858E6 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		45660CB714F8F8DF003858E6 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		45660CBE14F8FDDF003858E6 /* SynchroKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SynchroKit.xcodeproj; path = ../SynchroKit/SynchroKit.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +134,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				453A598714F8FE410009FA8C /* libSynchroKit.a in Frameworks */,
+				45660CB814F8F8DF003858E6 /* CFNetwork.framework in Frameworks */,
+				45660CB914F8F8DF003858E6 /* libxml2.dylib in Frameworks */,
+				45660CBA14F8F8DF003858E6 /* MobileCoreServices.framework in Frameworks */,
+				45660CBB14F8F8DF003858E6 /* QuartzCore.framework in Frameworks */,
+				45660CBC14F8F8DF003858E6 /* Security.framework in Frameworks */,
+				45660CBD14F8F8DF003858E6 /* SystemConfiguration.framework in Frameworks */,
+				45660CB114F8F8AF003858E6 /* libRestKit.a in Frameworks */,
 				45660C3B14F8F570003858E6 /* UIKit.framework in Frameworks */,
 				45660C3D14F8F570003858E6 /* Foundation.framework in Frameworks */,
 				45660C3F14F8F570003858E6 /* CoreGraphics.framework in Frameworks */,
@@ -83,10 +166,18 @@
 		45660C2B14F8F570003858E6 = {
 			isa = PBXGroup;
 			children = (
+				45660CBE14F8FDDF003858E6 /* SynchroKit.xcodeproj */,
+				45660C9D14F8F7C8003858E6 /* RestKit.xcodeproj */,
 				45660C4214F8F570003858E6 /* SynchroKitTester */,
 				45660C5E14F8F571003858E6 /* SynchroKitTesterTests */,
 				45660C3914F8F570003858E6 /* Frameworks */,
 				45660C3714F8F570003858E6 /* Products */,
+				45660CB214F8F8DE003858E6 /* CFNetwork.framework */,
+				45660CB314F8F8DF003858E6 /* libxml2.dylib */,
+				45660CB414F8F8DF003858E6 /* MobileCoreServices.framework */,
+				45660CB514F8F8DF003858E6 /* QuartzCore.framework */,
+				45660CB614F8F8DF003858E6 /* Security.framework */,
+				45660CB714F8F8DF003858E6 /* SystemConfiguration.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,6 +208,7 @@
 				45660C4B14F8F570003858E6 /* AppDelegate.h */,
 				45660C4C14F8F570003858E6 /* AppDelegate.m */,
 				45660C4E14F8F570003858E6 /* SynchroKitTester.xcdatamodeld */,
+				45660C7214F8F667003858E6 /* Model */,
 				45660C4314F8F570003858E6 /* Supporting Files */,
 			);
 			path = SynchroKitTester;
@@ -152,6 +244,35 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		45660C7214F8F667003858E6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				45660C6F14F8F663003858E6 /* City.h */,
+				45660C7014F8F663003858E6 /* City.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		45660C9E14F8F7C8003858E6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				45660CA814F8F7C8003858E6 /* libRestKit.a */,
+				45660CAA14F8F7C8003858E6 /* RestKitTests.octest */,
+				45660CAC14F8F7C8003858E6 /* RestKit.framework */,
+				45660CAE14F8F7C8003858E6 /* RestKitFrameworkTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		45660CBF14F8FDDF003858E6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				45660CC414F8FDDF003858E6 /* libSynchroKit.a */,
+				45660CC614F8FDDF003858E6 /* SynchroKitTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -166,6 +287,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				453A598914F8FE4E0009FA8C /* PBXTargetDependency */,
+				45660CB014F8F87A003858E6 /* PBXTargetDependency */,
 			);
 			name = SynchroKitTester;
 			productName = SynchroKitTester;
@@ -209,6 +332,16 @@
 			mainGroup = 45660C2B14F8F570003858E6;
 			productRefGroup = 45660C3714F8F570003858E6 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 45660C9E14F8F7C8003858E6 /* Products */;
+					ProjectRef = 45660C9D14F8F7C8003858E6 /* RestKit.xcodeproj */;
+				},
+				{
+					ProductGroup = 45660CBF14F8FDDF003858E6 /* Products */;
+					ProjectRef = 45660CBE14F8FDDF003858E6 /* SynchroKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				45660C3514F8F570003858E6 /* SynchroKitTester */,
@@ -216,6 +349,51 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		45660CA814F8F7C8003858E6 /* libRestKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKit.a;
+			remoteRef = 45660CA714F8F7C8003858E6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		45660CAA14F8F7C8003858E6 /* RestKitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RestKitTests.octest;
+			remoteRef = 45660CA914F8F7C8003858E6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		45660CAC14F8F7C8003858E6 /* RestKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RestKit.framework;
+			remoteRef = 45660CAB14F8F7C8003858E6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		45660CAE14F8F7C8003858E6 /* RestKitFrameworkTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RestKitFrameworkTests.octest;
+			remoteRef = 45660CAD14F8F7C8003858E6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		45660CC414F8FDDF003858E6 /* libSynchroKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSynchroKit.a;
+			remoteRef = 45660CC314F8FDDF003858E6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		45660CC614F8FDDF003858E6 /* SynchroKitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SynchroKitTests.octest;
+			remoteRef = 45660CC514F8FDDF003858E6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		45660C3414F8F570003858E6 /* Resources */ = {
@@ -260,6 +438,7 @@
 				45660C4914F8F570003858E6 /* main.m in Sources */,
 				45660C4D14F8F570003858E6 /* AppDelegate.m in Sources */,
 				45660C5014F8F570003858E6 /* SynchroKitTester.xcdatamodeld in Sources */,
+				45660C7114F8F663003858E6 /* City.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,10 +453,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		453A598914F8FE4E0009FA8C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SynchroKit;
+			targetProxy = 453A598814F8FE4E0009FA8C /* PBXContainerItemProxy */;
+		};
 		45660C5D14F8F571003858E6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 45660C3514F8F570003858E6 /* SynchroKitTester */;
 			targetProxy = 45660C5C14F8F571003858E6 /* PBXContainerItemProxy */;
+		};
+		45660CB014F8F87A003858E6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RestKit;
+			targetProxy = 45660CAF14F8F87A003858E6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -349,7 +538,15 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SynchroKitTester/SynchroKitTester-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"\"$(SOURCE_ROOT)/RestKit/Build\"",
+					"\"$(SOURCE_ROOT)/../SynchroKit\"",
+				);
 				INFOPLIST_FILE = "SynchroKitTester/SynchroKitTester-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -360,7 +557,15 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SynchroKitTester/SynchroKitTester-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"\"$(SOURCE_ROOT)/RestKit/Build\"",
+					"\"$(SOURCE_ROOT)/../SynchroKit\"",
+				);
 				INFOPLIST_FILE = "SynchroKitTester/SynchroKitTester-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -419,6 +624,7 @@
 				45660C6B14F8F571003858E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		45660C6C14F8F571003858E6 /* Build configuration list for PBXNativeTarget "SynchroKitTesterTests" */ = {
 			isa = XCConfigurationList;
@@ -427,6 +633,7 @@
 				45660C6E14F8F571003858E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

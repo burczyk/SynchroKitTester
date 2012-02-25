@@ -8,12 +8,17 @@
 
 #import "AppDelegate.h"
 
+NSString *WEB_ADDRESS = @"http://localhost:8000/";
+
 @implementation AppDelegate
 
 @synthesize window = _window;
 @synthesize managedObjectContext = __managedObjectContext;
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
+
+@synthesize rkObjectManager;
+@synthesize skObjectManager;
 
 - (void)dealloc
 {
@@ -30,6 +35,14 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    [self initializeRestKit];
+    [self setMapping];
+    
+    skObjectManager = [[SKObjectManager alloc] initWithRKObjectManager:rkObjectManager synchronizationStrategy:cyclic synchronizationInterval:5];
+    
+    [self startSynchronization];
+    
     return YES;
 }
 
@@ -180,6 +193,32 @@
 - (NSURL *)applicationDocumentsDirectory
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
+
+#pragma mark RestKit configuration
+
+- (void) initializeRestKit {
+    NSLog(@"WEB_ADDRESS: %@", WEB_ADDRESS);
+    rkObjectManager = [RKObjectManager objectManagerWithBaseURL:WEB_ADDRESS];
+    rkObjectManager.client.requestQueue.showsNetworkActivityIndicatorWhenBusy = YES;
+    NSString *databaseName = @"SynchroKitTester.sqlite";   
+    
+    rkObjectManager.objectStore = [RKManagedObjectStore objectStoreWithStoreFilename:databaseName usingSeedDatabaseName:NULL managedObjectModel:[self managedObjectModel] delegate:self];  
+}
+
+- (void) setMapping {
+    RKManagedObjectMapping *cityMapping = [RKManagedObjectMapping mappingForClass:[City class]];
+    [cityMapping mapKeyPathsToAttributes:@"id", @"identifier", @"name", @"name", nil];
+    cityMapping.primaryKeyAttribute = @"identifier";
+    [rkObjectManager.mappingProvider setMapping:cityMapping forKeyPath:@"City"];
+    NSLog(@"cityMapping done");
+}
+
+#pragma mark synchronization configuration
+
+- (void) startSynchronization {
+    [skObjectManager addObject:[City class] forKey:@"/get/City"];
+    [skObjectManager run];
 }
 
 @end
