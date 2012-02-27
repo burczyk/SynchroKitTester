@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		451524E814FC0AC40068971B /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 451524E714FC0AC40068971B /* Message.m */; };
+		451524EB14FC0AC50068971B /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 451524EA14FC0AC50068971B /* User.m */; };
 		453A598714F8FE410009FA8C /* libSynchroKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45660CC414F8FDDF003858E6 /* libSynchroKit.a */; };
 		45660C3B14F8F570003858E6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45660C3A14F8F570003858E6 /* UIKit.framework */; };
 		45660C3D14F8F570003858E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45660C3C14F8F570003858E6 /* Foundation.framework */; };
@@ -22,7 +24,6 @@
 		45660C5B14F8F571003858E6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45660C4014F8F570003858E6 /* CoreData.framework */; };
 		45660C6314F8F571003858E6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 45660C6114F8F571003858E6 /* InfoPlist.strings */; };
 		45660C6614F8F571003858E6 /* SynchroKitTesterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45660C6514F8F571003858E6 /* SynchroKitTesterTests.m */; };
-		45660C7114F8F663003858E6 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = 45660C7014F8F663003858E6 /* City.m */; };
 		45660CB114F8F8AF003858E6 /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45660CA814F8F7C8003858E6 /* libRestKit.a */; };
 		45660CB814F8F8DF003858E6 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45660CB214F8F8DE003858E6 /* CFNetwork.framework */; };
 		45660CB914F8F8DF003858E6 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 45660CB314F8F8DF003858E6 /* libxml2.dylib */; };
@@ -99,6 +100,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		451524E614FC0AC40068971B /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Message.h; path = Model/Message.h; sourceTree = "<group>"; };
+		451524E714FC0AC40068971B /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Message.m; path = Model/Message.m; sourceTree = "<group>"; };
+		451524E914FC0AC50068971B /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = Model/User.h; sourceTree = "<group>"; };
+		451524EA14FC0AC50068971B /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Model/User.m; sourceTree = "<group>"; };
 		45660C3614F8F570003858E6 /* SynchroKitTester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SynchroKitTester.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45660C3A14F8F570003858E6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		45660C3C14F8F570003858E6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -117,8 +122,6 @@
 		45660C6214F8F571003858E6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		45660C6414F8F571003858E6 /* SynchroKitTesterTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SynchroKitTesterTests.h; sourceTree = "<group>"; };
 		45660C6514F8F571003858E6 /* SynchroKitTesterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SynchroKitTesterTests.m; sourceTree = "<group>"; };
-		45660C6F14F8F663003858E6 /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = City.h; path = Model/City.h; sourceTree = "<group>"; };
-		45660C7014F8F663003858E6 /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = City.m; path = Model/City.m; sourceTree = "<group>"; };
 		45660C9D14F8F7C8003858E6 /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
 		45660CB214F8F8DE003858E6 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		45660CB314F8F8DF003858E6 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
@@ -247,8 +250,10 @@
 		45660C7214F8F667003858E6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				45660C6F14F8F663003858E6 /* City.h */,
-				45660C7014F8F663003858E6 /* City.m */,
+				451524E914FC0AC50068971B /* User.h */,
+				451524EA14FC0AC50068971B /* User.m */,
+				451524E614FC0AC40068971B /* Message.h */,
+				451524E714FC0AC40068971B /* Message.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -438,7 +443,8 @@
 				45660C4914F8F570003858E6 /* main.m in Sources */,
 				45660C4D14F8F570003858E6 /* AppDelegate.m in Sources */,
 				45660C5014F8F570003858E6 /* SynchroKitTester.xcdatamodeld in Sources */,
-				45660C7114F8F663003858E6 /* City.m in Sources */,
+				451524E814FC0AC40068971B /* Message.m in Sources */,
+				451524EB14FC0AC50068971B /* User.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

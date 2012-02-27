@@ -39,7 +39,7 @@ NSString *WEB_ADDRESS = @"http://localhost:8000/";
     [self initializeRestKit];
     [self setMapping];
     
-    skObjectManager = [[SKObjectManager alloc] initWithRKObjectManager:rkObjectManager synchronizationStrategy:cyclic synchronizationInterval:5];
+    skObjectManager = [[SKObjectManager alloc] initWithRKObjectManager:rkObjectManager synchronizationStrategy:SKSynchronizationStrategyCyclic synchronizationInterval:5];
     
     [self startSynchronization];
     
@@ -207,17 +207,28 @@ NSString *WEB_ADDRESS = @"http://localhost:8000/";
 }
 
 - (void) setMapping {
-    RKManagedObjectMapping *cityMapping = [RKManagedObjectMapping mappingForClass:[City class]];
-    [cityMapping mapKeyPathsToAttributes:@"id", @"identifier", @"name", @"name", nil];
-    cityMapping.primaryKeyAttribute = @"identifier";
-    [rkObjectManager.mappingProvider setMapping:cityMapping forKeyPath:@"City"];
-    NSLog(@"cityMapping done");
+    RKManagedObjectMapping *userMapping = [RKManagedObjectMapping mappingForClass:[User class]];
+    [userMapping mapKeyPathsToAttributes:@"id", @"identifier", @"name", @"name", nil];
+    userMapping.primaryKeyAttribute = @"identifier";
+    [rkObjectManager.mappingProvider setMapping:userMapping forKeyPath:@"User"];
+    NSLog(@"userMapping done");
+    
+    RKManagedObjectMapping *messageMapping = [RKManagedObjectMapping mappingForClass:[Message class]];
+    [messageMapping mapKeyPathsToAttributes:@"id", @"identifier", @"text", @"text", nil];
+    messageMapping.primaryKeyAttribute = @"identifier";
+    [rkObjectManager.mappingProvider setMapping:messageMapping forKeyPath:@"Message"];
+    NSLog(@"messageMapping done");    
 }
 
 #pragma mark synchronization configuration
 
 - (void) startSynchronization {
-    [skObjectManager addObject:[City class] forKey:@"/get/City"];
+    SKObjectConfiguration *userConfiguration    = [[SKObjectConfiguration alloc] initWithName:@"User" Class:[User class] downloadPath:@"/get/User" updateDatePath:Nil];
+    SKObjectConfiguration *messageConfiguration = [[SKObjectConfiguration alloc] initWithName:@"Message" Class:[Message class] downloadPath:@"/get/Message" updateDatePath:Nil];
+    
+    [skObjectManager addObject:userConfiguration];
+    [skObjectManager addObject:messageConfiguration];
+    
     [skObjectManager run];
 }
 

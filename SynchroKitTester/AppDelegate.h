@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <RestKit/RestKit.h>
-#import "City.h"
+#import "User.h"
+#import "Message.h"
 #import <SynchroKit/SynchroKit.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate> {
