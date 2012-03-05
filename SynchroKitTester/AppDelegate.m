@@ -218,13 +218,19 @@ NSString *WEB_ADDRESS = @"http://localhost:8000/";
     messageMapping.primaryKeyAttribute = @"identifier";
     [rkObjectManager.mappingProvider setMapping:messageMapping forKeyPath:@"Message"];
     NSLog(@"messageMapping done");    
+    
+    RKManagedObjectMapping *updateDateMapping = [RKManagedObjectMapping mappingForClass:[UpdateDate class]];
+    [updateDateMapping mapKeyPathsToAttributes:@"className", @"objectClassName", @"updateDate", @"updateDate", @"dateFormat", @"dateFormat", nil];
+    updateDateMapping.primaryKeyAttribute = @"className";
+    [rkObjectManager.mappingProvider setMapping:updateDateMapping forKeyPath:@"UpdateDate"];
+    NSLog(@"updateDateMapping done");     
 }
 
 #pragma mark synchronization configuration
 
 - (void) startSynchronization {
-    SKObjectConfiguration *userConfiguration    = [[SKObjectConfiguration alloc] initWithName:@"User" Class:[User class] downloadPath:@"/get/User" updateDatePath:Nil];
-    SKObjectConfiguration *messageConfiguration = [[SKObjectConfiguration alloc] initWithName:@"Message" Class:[Message class] downloadPath:@"/get/Message" updateDatePath:Nil];
+    SKObjectConfiguration *userConfiguration    = [[SKObjectConfiguration alloc] initWithName:@"User" Class:[User class] downloadPath:@"/get/User" updateDatePath:@"/get/updateDate/User" updateDateClass:[UpdateDate class]];
+    SKObjectConfiguration *messageConfiguration = [[SKObjectConfiguration alloc] initWithName:@"Message" Class:[Message class] downloadPath:@"/get/Message" updateDatePath:@"/get/updateDate/Message" updateDateClass:[UpdateDate class]];
     
     [skObjectManager addObject:userConfiguration];
     [skObjectManager addObject:messageConfiguration];

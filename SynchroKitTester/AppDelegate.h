@@ -10,6 +10,7 @@
 #import <RestKit/RestKit.h>
 #import "User.h"
 #import "Message.h"
+#import "UpdateDate.h"
 #import <SynchroKit/SynchroKit.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate> {
