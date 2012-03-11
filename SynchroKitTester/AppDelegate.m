@@ -39,7 +39,9 @@ NSString *WEB_ADDRESS = @"http://localhost:8000/";
     [self initializeRestKit];
     [self setMapping];
     
-    skObjectManager = [[SKObjectManager alloc] initWithRKObjectManager:rkObjectManager synchronizationStrategy:SKSynchronizationStrategyCyclic synchronizationInterval:5];
+//    skObjectManager = [[SKObjectManager alloc] initWithNSManagedObjectContext: (NSManagedObjectContext*) self.managedObjectContext RKObjectManager: (RKObjectManager*) rkObjectManager synchronizationStrategy: SynchronizationStrategyCyclic synchronizationInterval: 5];
+
+    skObjectManager = [[SKObjectManager alloc] initWithNSManagedObjectContext: (NSManagedObjectContext*) self.managedObjectContext RKObjectManager: (RKObjectManager*) rkObjectManager synchronizationStrategy: SynchronizationStrategyPerRequest synchronizationInterval: 0];
     
     [self startSynchronization];
     
@@ -226,7 +228,7 @@ NSString *WEB_ADDRESS = @"http://localhost:8000/";
     NSLog(@"updateDateMapping done");     
 }
 
-#pragma mark synchronization configuration
+#pragma mark SynchroKit configuration
 
 - (void) startSynchronization {
     SKObjectConfiguration *userConfiguration    = [[SKObjectConfiguration alloc] initWithName:@"User" Class:[User class] downloadPath:@"/get/User" updateDatePath:@"/get/updateDate/User" updateDateClass:[UpdateDate class]];
@@ -236,6 +238,9 @@ NSString *WEB_ADDRESS = @"http://localhost:8000/";
     [skObjectManager addObject:messageConfiguration];
     
     [skObjectManager run];
+    
+    NSMutableArray *objects = [skObjectManager getEntitiesForName:@"User" withPredicate:Nil andSortDescriptor:Nil];
+    NSLog(@"OBJECTS: %@", objects);
 }
 
 @end
