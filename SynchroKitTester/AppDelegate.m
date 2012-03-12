@@ -3,7 +3,7 @@
 //  SynchroKitTester
 //
 //  Created by Kamil Burczyk on 12-02-25.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Kamil Burczyk. All rights reserved.
 //
 
 #import "AppDelegate.h"
@@ -241,6 +241,20 @@ NSString *WEB_ADDRESS = @"http://localhost:8000/";
     
     NSMutableArray *objects = [skObjectManager getEntitiesForName:@"User" withPredicate:Nil andSortDescriptor:Nil];
     NSLog(@"OBJECTS: %@", objects);
+    
+    SKSweeper *sweeper = [[SKSweeper alloc] init];
+    NSLog(@"size before delete: %lld", [sweeper getPersistentStoreSize]);
+    
+    NSError *error;
+    for (NSManagedObject *object in objects) {
+        [[self managedObjectContext] deleteObject:object];
+        [[self managedObjectContext] save:&error];
+        if (error) {
+            NSLog(@"Error while deleting: %@", error);
+        }
+    }
+
+    NSLog(@"size after delete: %lld", [sweeper getPersistentStoreSize]);
 }
 
 @end

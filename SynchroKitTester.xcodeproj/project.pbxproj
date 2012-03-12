@@ -331,6 +331,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "Kamil Burczyk";
 			};
 			buildConfigurationList = 45660C3014F8F570003858E6 /* Build configuration list for PBXProject "SynchroKitTester" */;
 			compatibilityVersion = "Xcode 3.2";
