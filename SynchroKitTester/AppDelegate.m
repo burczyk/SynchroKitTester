@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 
 NSString *WEB_ADDRESS = @"http://localhost:8000/";
+NSString *PERSISTENT_STORE_NAME = @"SynchroKitTester.sqlite";
 
 @implementation AppDelegate
 
@@ -41,7 +42,7 @@ NSString *WEB_ADDRESS = @"http://localhost:8000/";
     
 //    skObjectManager = [[SKObjectManager alloc] initWithNSManagedObjectContext: (NSManagedObjectContext*) self.managedObjectContext RKObjectManager: (RKObjectManager*) rkObjectManager synchronizationStrategy: SynchronizationStrategyCyclic synchronizationInterval: 5];
 
-    skObjectManager = [[SKObjectManager alloc] initWithNSManagedObjectContext: (NSManagedObjectContext*) self.managedObjectContext RKObjectManager: (RKObjectManager*) rkObjectManager synchronizationStrategy: SynchronizationStrategyPerRequest synchronizationInterval: 0];
+    skObjectManager = [[SKObjectManager alloc] initWithNSManagedObjectContext: (NSManagedObjectContext*) self.managedObjectContext RKObjectManager: (RKObjectManager*) rkObjectManager synchronizationStrategy: SynchronizationStrategyCyclic synchronizationInterval: 5];
     
     [self startSynchronization];
     
@@ -151,7 +152,7 @@ NSString *WEB_ADDRESS = @"http://localhost:8000/";
         return __persistentStoreCoordinator;
     }
     
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"SynchroKitTester.sqlite"];
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:PERSISTENT_STORE_NAME];
     
     NSError *error = nil;
     __persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
@@ -203,9 +204,8 @@ NSString *WEB_ADDRESS = @"http://localhost:8000/";
     NSLog(@"WEB_ADDRESS: %@", WEB_ADDRESS);
     rkObjectManager = [RKObjectManager objectManagerWithBaseURL:WEB_ADDRESS];
     rkObjectManager.client.requestQueue.showsNetworkActivityIndicatorWhenBusy = YES;
-    NSString *databaseName = @"SynchroKitTester.sqlite";   
     
-    rkObjectManager.objectStore = [RKManagedObjectStore objectStoreWithStoreFilename:databaseName usingSeedDatabaseName:NULL managedObjectModel:[self managedObjectModel] delegate:self];  
+    rkObjectManager.objectStore = [RKManagedObjectStore objectStoreWithStoreFilename:PERSISTENT_STORE_NAME usingSeedDatabaseName:NULL managedObjectModel:[self managedObjectModel] delegate:self];  
 }
 
 - (void) setMapping {
@@ -242,19 +242,18 @@ NSString *WEB_ADDRESS = @"http://localhost:8000/";
     NSMutableArray *objects = [skObjectManager getEntitiesForName:@"User" withPredicate:Nil andSortDescriptor:Nil];
     NSLog(@"OBJECTS: %@", objects);
     
-    SKSweeper *sweeper = [[SKSweeper alloc] init];
-    NSLog(@"size before delete: %lld", [sweeper getPersistentStoreSize]);
     
-    NSError *error;
-    for (NSManagedObject *object in objects) {
-        [[self managedObjectContext] deleteObject:object];
-        [[self managedObjectContext] save:&error];
-        if (error) {
-            NSLog(@"Error while deleting: %@", error);
-        }
-    }
-
-    NSLog(@"size after delete: %lld", [sweeper getPersistentStoreSize]);
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [[NSDateComponents alloc] init];
+    [components setDay:1]; 
+    [components setMonth:1]; 
+    [components setYear:2013];
+    NSDate *date = [calendar dateFromComponents:components];
+    [components release];
+    
+    
+    SKSweepConfiguration *sweepConfiguration = [[SKSweepConfiguration alloc] initWithTimeInterval:5 sweepingStrategy:SweepingStrategyDate maxPersistentStoreSize:100 minLastUpdateDate:date];
+    [skObjectManager runSweeperWithConfiguration:sweepConfiguration persistentStoreCoordinator:[self persistentStoreCoordinator]];
 }
 
 @end
