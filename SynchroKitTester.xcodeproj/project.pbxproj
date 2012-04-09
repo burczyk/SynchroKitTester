@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		451524E814FC0AC40068971B /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 451524E714FC0AC40068971B /* Message.m */; };
-		451524EB14FC0AC50068971B /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 451524EA14FC0AC50068971B /* User.m */; };
 		4536AFD21504B72D00E5AD7E /* UpdateDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4536AFD11504B72D00E5AD7E /* UpdateDate.m */; };
 		453A598714F8FE410009FA8C /* libSynchroKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45660CC414F8FDDF003858E6 /* libSynchroKit.a */; };
 		45660C3B14F8F570003858E6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45660C3A14F8F570003858E6 /* UIKit.framework */; };
@@ -32,6 +31,7 @@
 		45660CBB14F8F8DF003858E6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45660CB514F8F8DF003858E6 /* QuartzCore.framework */; };
 		45660CBC14F8F8DF003858E6 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45660CB614F8F8DF003858E6 /* Security.framework */; };
 		45660CBD14F8F8DF003858E6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45660CB714F8F8DF003858E6 /* SystemConfiguration.framework */; };
+		458CBC471532F70000F75FED /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 458CBC461532F70000F75FED /* User.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,8 +103,6 @@
 /* Begin PBXFileReference section */
 		451524E614FC0AC40068971B /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Message.h; path = Model/Message.h; sourceTree = "<group>"; };
 		451524E714FC0AC40068971B /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Message.m; path = Model/Message.m; sourceTree = "<group>"; };
-		451524E914FC0AC50068971B /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = Model/User.h; sourceTree = "<group>"; };
-		451524EA14FC0AC50068971B /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Model/User.m; sourceTree = "<group>"; };
 		4536AFD01504B72D00E5AD7E /* UpdateDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UpdateDate.h; path = Model/UpdateDate.h; sourceTree = "<group>"; };
 		4536AFD11504B72D00E5AD7E /* UpdateDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UpdateDate.m; path = Model/UpdateDate.m; sourceTree = "<group>"; };
 		45660C3614F8F570003858E6 /* SynchroKitTester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SynchroKitTester.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,6 +131,8 @@
 		45660CB614F8F8DF003858E6 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		45660CB714F8F8DF003858E6 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		45660CBE14F8FDDF003858E6 /* SynchroKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SynchroKit.xcodeproj; path = ../SynchroKit/SynchroKit.xcodeproj; sourceTree = "<group>"; };
+		458CBC451532F70000F75FED /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		458CBC461532F70000F75FED /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,10 +253,10 @@
 		45660C7214F8F667003858E6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				458CBC451532F70000F75FED /* User.h */,
+				458CBC461532F70000F75FED /* User.m */,
 				4536AFD01504B72D00E5AD7E /* UpdateDate.h */,
 				4536AFD11504B72D00E5AD7E /* UpdateDate.m */,
-				451524E914FC0AC50068971B /* User.h */,
-				451524EA14FC0AC50068971B /* User.m */,
 				451524E614FC0AC40068971B /* Message.h */,
 				451524E714FC0AC40068971B /* Message.m */,
 			);
@@ -450,8 +450,8 @@
 				45660C4D14F8F570003858E6 /* AppDelegate.m in Sources */,
 				45660C5014F8F570003858E6 /* SynchroKitTester.xcdatamodeld in Sources */,
 				451524E814FC0AC40068971B /* Message.m in Sources */,
-				451524EB14FC0AC50068971B /* User.m in Sources */,
 				4536AFD21504B72D00E5AD7E /* UpdateDate.m in Sources */,
+				458CBC471532F70000F75FED /* User.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

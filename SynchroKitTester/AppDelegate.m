@@ -42,7 +42,7 @@ NSString *PERSISTENT_STORE_NAME = @"SynchroKitTester.sqlite";
     
 //    skObjectManager = [[SKObjectManager alloc] initWithNSManagedObjectContext: (NSManagedObjectContext*) self.managedObjectContext RKObjectManager: (RKObjectManager*) rkObjectManager synchronizationStrategy: SynchronizationStrategyCyclic synchronizationInterval: 5];
 
-    skObjectManager = [[SKObjectManager alloc] initWithNSManagedObjectContext: (NSManagedObjectContext*) self.managedObjectContext RKObjectManager: (RKObjectManager*) rkObjectManager synchronizationStrategy: SynchronizationStrategyCyclic synchronizationInterval: 5];
+    skObjectManager = [[SKObjectManager alloc] initWithNSManagedObjectContext: (NSManagedObjectContext*) self.managedObjectContext RKObjectManager: (RKObjectManager*) rkObjectManager synchronizationStrategy: SynchronizationStrategyPerRequest synchronizationInterval: 5];
     
     [self startSynchronization];
     
@@ -231,7 +231,7 @@ NSString *PERSISTENT_STORE_NAME = @"SynchroKitTester.sqlite";
 #pragma mark SynchroKit configuration
 
 - (void) startSynchronization {
-    SKObjectConfiguration *userConfiguration    = [[SKObjectConfiguration alloc] initWithName:@"User" Class:[User class] downloadPath:@"/get/User" updateDatePath:@"/get/updateDate/User" updateDateClass:[UpdateDate class]];
+    SKObjectConfiguration *userConfiguration    = [[SKObjectConfiguration alloc] initWithName:@"User" Class:[User class] downloadPath:@"/get/User" updateDatePath:@"/get/updateDate/User" updateDateClass:[UpdateDate class] updatedSinceDatePath:@"/get/updatedSinceDate/User" isDeletedSelector:@selector(isRemoved)];
     SKObjectConfiguration *messageConfiguration = [[SKObjectConfiguration alloc] initWithName:@"Message" Class:[Message class] downloadPath:@"/get/Message" updateDatePath:@"/get/updateDate/Message" updateDateClass:[UpdateDate class]];
     
     [skObjectManager addObject:userConfiguration];
@@ -243,17 +243,17 @@ NSString *PERSISTENT_STORE_NAME = @"SynchroKitTester.sqlite";
     NSLog(@"OBJECTS: %@", objects);
     
     
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSDateComponents *components = [[NSDateComponents alloc] init];
-    [components setDay:1]; 
-    [components setMonth:1]; 
-    [components setYear:2013];
-    NSDate *date = [calendar dateFromComponents:components];
-    [components release];
-    
-    
-    SKSweepConfiguration *sweepConfiguration = [[SKSweepConfiguration alloc] initWithTimeInterval:5 sweepingStrategy:SweepingStrategyDate maxPersistentStoreSize:100 minLastUpdateDate:date];
-    [skObjectManager runSweeperWithConfiguration:sweepConfiguration persistentStoreCoordinator:[self persistentStoreCoordinator]];
+//    NSCalendar *calendar = [NSCalendar currentCalendar];
+//    NSDateComponents *components = [[NSDateComponents alloc] init];
+//    [components setDay:1]; 
+//    [components setMonth:1]; 
+//    [components setYear:2013];
+//    NSDate *date = [calendar dateFromComponents:components];
+//    [components release];
+//    
+//    
+//    SKSweepConfiguration *sweepConfiguration = [[SKSweepConfiguration alloc] initWithTimeInterval:5 sweepingStrategy:SweepingStrategyDate maxPersistentStoreSize:100 minLastUpdateDate:date];
+//    [skObjectManager runSweeperWithConfiguration:sweepConfiguration persistentStoreCoordinator:[self persistentStoreCoordinator]];
 }
 
 @end
