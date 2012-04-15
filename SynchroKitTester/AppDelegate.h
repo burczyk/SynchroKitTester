@@ -13,7 +13,7 @@
 #import "UpdateDate.h"
 #import <SynchroKit/SynchroKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate> {
+@interface AppDelegate : UIResponder <UIApplicationDelegate, RKObjectLoaderDelegate> {
     RKObjectManager *rkObjectManager;
     SKObjectManager *skObjectManager;
 }
