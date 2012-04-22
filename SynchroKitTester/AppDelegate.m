@@ -232,7 +232,7 @@ NSString *PERSISTENT_STORE_NAME = @"SynchroKitTester.sqlite";
 
 - (void) startSynchronization {
 //    SKObjectConfiguration *userConfiguration    = [[SKObjectConfiguration alloc] initWithName:@"User" Class:[User class] downloadPath:@"/get/User" updateDatePath:@"/get/updateDate/User" updateDateClass:[UpdateDate class] updatedSinceDatePath:@"/get/updatedSinceDate/User" delegate:self asynchronous:TRUE isDeletedSelector:@selector(isRemoved)];
-    SKObjectConfiguration *userConfiguration    = [[SKObjectConfiguration alloc] initWithName:@"User" Class:[User class] downloadPath:@"/get/User" updateDatePath:NULL updateDateClass:[UpdateDate class] updatedSinceDatePath:NULL delegate:self asynchronous:TRUE isDeletedSelector:@selector(isRemoved)];    
+    SKObjectConfiguration *userConfiguration    = [[SKObjectConfiguration alloc] initWithName:@"User" Class:[User class] downloadPath:@"/get/User" updateDatePath:NULL updateDateClass:[UpdateDate class] updatedSinceDatePath:NULL conditionUpdatePath:@"/get/User" delegate:self asynchronous:TRUE isDeletedSelector:@selector(isRemoved)];    
 //    SKObjectConfiguration *messageConfiguration = [[SKObjectConfiguration alloc] initWithName:@"Message" Class:[Message class] downloadPath:@"/get/Message" updateDatePath:@"/get/updateDate/Message" updateDateClass:[UpdateDate class]];
     
     [skObjectManager addObject:userConfiguration];
