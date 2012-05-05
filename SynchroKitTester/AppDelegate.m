@@ -39,8 +39,6 @@ NSString *PERSISTENT_STORE_NAME = @"SynchroKitTester.sqlite";
     
     [self initializeRestKit];
     [self setMapping];
-    
-//    skObjectManager = [[SKObjectManager alloc] initWithNSManagedObjectContext: (NSManagedObjectContext*) self.managedObjectContext RKObjectManager: (RKObjectManager*) rkObjectManager synchronizationStrategy: SynchronizationStrategyCyclic synchronizationInterval: 5];
 
     skObjectManager = [[SKObjectManager alloc] initWithNSManagedObjectContext: (NSManagedObjectContext*) self.managedObjectContext RKObjectManager: (RKObjectManager*) rkObjectManager synchronizationStrategy: SynchronizationStrategyDeamon synchronizationInterval: 5];
     
@@ -225,14 +223,23 @@ NSString *PERSISTENT_STORE_NAME = @"SynchroKitTester.sqlite";
     [updateDateMapping mapKeyPathsToAttributes:@"className", @"objectClassName", @"updateDate", @"updateDate", @"dateFormat", @"dateFormat", nil];
     updateDateMapping.primaryKeyAttribute = @"className";
     [rkObjectManager.mappingProvider setMapping:updateDateMapping forKeyPath:@"UpdateDate"];
-    NSLog(@"updateDateMapping done");     
+    NSLog(@"updateDateMapping done");      
+    
+    RKObjectMapping *userSerializationMapping = [RKObjectMapping mappingForClass:[User class]];    
+    [userSerializationMapping mapKeyPathsToAttributes:@"identifier", @"id", @"name", @"name", nil];
+    [[RKObjectManager sharedManager].mappingProvider setSerializationMapping:userSerializationMapping forClass:[User class]];  
+    
+    [[RKObjectManager sharedManager].router routeClass:[User class] toResourcePath:@"/User/add/" forMethod:RKRequestMethodPOST]; 
 }
 
 #pragma mark SynchroKit configuration
 
 - (void) startSynchronization {
 //    SKObjectConfiguration *userConfiguration    = [[SKObjectConfiguration alloc] initWithName:@"User" Class:[User class] downloadPath:@"/get/User" updateDatePath:@"/get/updateDate/User" updateDateClass:[UpdateDate class] updatedSinceDatePath:@"/get/updatedSinceDate/User" delegate:self asynchronous:TRUE isDeletedSelector:@selector(isRemoved)];
-    SKObjectConfiguration *userConfiguration    = [[SKObjectConfiguration alloc] initWithName:@"User" Class:[User class] downloadPath:@"/get/User" updateDatePath:NULL updateDateClass:[UpdateDate class] updatedSinceDatePath:NULL conditionUpdatePath:@"/get/User" delegate:self asynchronous:TRUE isDeletedSelector:@selector(isRemoved)];    
+    NSMutableArray *conditions = [[NSMutableArray alloc] init];
+    SKCondition *cond1 = [[SKCondition alloc] initWithKey:@"id" condOperator:OperatorGT value:[NSNumber numberWithInt:2]];
+    [conditions addObject:cond1];
+    SKObjectConfiguration *userConfiguration    = [[SKObjectConfiguration alloc] initWithName:@"User" Class:[User class] downloadPath:@"/get/User" updateDatePath:NULL updateDateClass:[UpdateDate class] updatedSinceDatePath:NULL conditionUpdatePath:@"/get/User" updateConditions: conditions delegate:self asynchronous:TRUE isDeletedSelector:@selector(isRemoved)];    
 //    SKObjectConfiguration *messageConfiguration = [[SKObjectConfiguration alloc] initWithName:@"Message" Class:[Message class] downloadPath:@"/get/Message" updateDatePath:@"/get/updateDate/Message" updateDateClass:[UpdateDate class]];
     
     [skObjectManager addObject:userConfiguration];
@@ -255,6 +262,13 @@ NSString *PERSISTENT_STORE_NAME = @"SynchroKitTester.sqlite";
 //    
 //    SKSweepConfiguration *sweepConfiguration = [[SKSweepConfiguration alloc] initWithTimeInterval:5 sweepingStrategy:SweepingStrategyDate maxPersistentStoreSize:100 minLastUpdateDate:date];
 //    [skObjectManager runSweeperWithConfiguration:sweepConfiguration persistentStoreCoordinator:[self persistentStoreCoordinator]];
+    
+
+    User *newUser = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:self.managedObjectContext];
+    [newUser setName:@"Kamil"];
+
+    [skObjectManager saveObject: newUser forName:@"User"];
+    
 }
 
 #pragma mark RKObjectLoaderDelegate methods
