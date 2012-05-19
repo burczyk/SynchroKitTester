@@ -32,17 +32,17 @@ NSString *PERSISTENT_STORE_NAME = @"SynchroKitTester.sqlite";
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
+//    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+//    // Override point for customization after application launch.
+//    self.window.backgroundColor = [UIColor whiteColor];
+//    [self.window makeKeyAndVisible];
     
     [self initializeRestKit];
     [self setMapping];
 
     skObjectManager = [[SKObjectManager alloc] initWithNSManagedObjectContext: (NSManagedObjectContext*) self.managedObjectContext RKObjectManager: (RKObjectManager*) rkObjectManager synchronizationStrategy: SynchronizationStrategyDeamon synchronizationInterval: 5];
     
-    [self startSynchronization];
+//    [self startSynchronization];
     
     return YES;
 }
