@@ -1,5 +1,5 @@
 //
-//  Message.h
+//  Product.h
 //  SynchroKitTester
 //
 //  Created by Kamil Burczyk on 22.05.2012.
@@ -11,11 +11,11 @@
 
 @class User;
 
-@interface Message : NSManagedObject
+@interface Product : NSManagedObject
 
+@property (nonatomic, retain) NSString * desc;
+@property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSNumber * identifier;
-@property (nonatomic, retain) NSString * text;
-@property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) User *user;
 
 @end

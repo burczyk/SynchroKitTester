@@ -214,10 +214,16 @@ NSString *PERSISTENT_STORE_NAME = @"SynchroKitTester.sqlite";
     NSLog(@"userMapping done");
     
     RKManagedObjectMapping *messageMapping = [RKManagedObjectMapping mappingForClass:[Message class]];
-    [messageMapping mapKeyPathsToAttributes:@"id", @"identifier", @"text", @"text", nil];
+    [messageMapping mapKeyPathsToAttributes:@"id", @"identifier", @"text", @"text", @"title", @"title", nil];
     messageMapping.primaryKeyAttribute = @"identifier";
     [rkObjectManager.mappingProvider setMapping:messageMapping forKeyPath:@"Message"];
     NSLog(@"messageMapping done");    
+
+    RKManagedObjectMapping *productMapping = [RKManagedObjectMapping mappingForClass:[Product class]];
+    [productMapping mapKeyPathsToAttributes:@"id", @"identifier", @"name", @"name", @"description", @"desc", nil];
+    productMapping.primaryKeyAttribute = @"identifier";
+    [rkObjectManager.mappingProvider setMapping:productMapping forKeyPath:@"Product"];
+    NSLog(@"productMapping done");      
     
     RKManagedObjectMapping *updateDateMapping = [RKManagedObjectMapping mappingForClass:[UpdateDate class]];
     [updateDateMapping mapKeyPathsToAttributes:@"className", @"objectClassName", @"updateDate", @"updateDate", @"dateFormat", @"dateFormat", nil];
@@ -240,10 +246,12 @@ NSString *PERSISTENT_STORE_NAME = @"SynchroKitTester.sqlite";
     SKCondition *cond1 = [[SKCondition alloc] initWithKey:@"id" condOperator:OperatorGT value:[NSNumber numberWithInt:2]];
     [conditions addObject:cond1];
     SKObjectConfiguration *userConfiguration    = [[SKObjectConfiguration alloc] initWithName:@"User" Class:[User class] downloadPath:@"/get/User" updateDatePath:NULL updateDateClass:[UpdateDate class] updatedSinceDatePath:NULL conditionUpdatePath:@"/get/User" updateConditions: conditions delegate:self asynchronous:TRUE isDeletedSelector:@selector(isRemoved)];    
-//    SKObjectConfiguration *messageConfiguration = [[SKObjectConfiguration alloc] initWithName:@"Message" Class:[Message class] downloadPath:@"/get/Message" updateDatePath:@"/get/updateDate/Message" updateDateClass:[UpdateDate class]];
+
+    
+    SKObjectConfiguration *messageConfiguration = [[SKObjectConfiguration alloc] initWithName:@"Message" Class:[Message class] downloadPath:@"/get/Message" updateDatePath:@"/get/updateDate/Message" updateDateClass:[UpdateDate class]];
     
     [skObjectManager addObject:userConfiguration];
-//    [skObjectManager addObject:messageConfiguration];
+    [skObjectManager addObject:messageConfiguration];
     
     [skObjectManager run];
     
@@ -264,10 +272,10 @@ NSString *PERSISTENT_STORE_NAME = @"SynchroKitTester.sqlite";
 //    [skObjectManager runSweeperWithConfiguration:sweepConfiguration persistentStoreCoordinator:[self persistentStoreCoordinator]];
     
 
-    User *newUser = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:self.managedObjectContext];
-    [newUser setName:@"Kamil"];
-
-    [skObjectManager saveObject: newUser forName:@"User"];
+//    User *newUser = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:self.managedObjectContext];
+//    [newUser setName:@"Kamil"];
+//
+//    [skObjectManager saveObject: newUser forName:@"User"];
     
 }
 

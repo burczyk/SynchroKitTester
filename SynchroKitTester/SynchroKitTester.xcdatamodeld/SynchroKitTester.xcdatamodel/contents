@@ -3,7 +3,14 @@
     <entity name="Message" representedClassName="Message" syncable="YES">
         <attribute name="identifier" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="message" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="Product" representedClassName="Product" syncable="YES">
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="identifier" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="product" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="UpdateDate" representedClassName="UpdateDate" syncable="YES">
         <attribute name="dateFormat" optional="YES" attributeType="String" syncable="YES"/>
@@ -16,9 +23,11 @@
         <attribute name="isRemoved" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="message" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Message" inverseName="user" inverseEntity="Message" syncable="YES"/>
+        <relationship name="product" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Product" inverseName="user" inverseEntity="Product" syncable="YES"/>
     </entity>
     <elements>
         <element name="Message" positionX="160" positionY="192" width="128" height="90"/>
+        <element name="Product" positionX="160" positionY="192" width="128" height="105"/>
         <element name="UpdateDate" positionX="261" positionY="333" width="128" height="90"/>
         <element name="User" positionX="349" positionY="180" width="128" height="120"/>
     </elements>
